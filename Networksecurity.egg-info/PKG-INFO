@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: Networksecurity
+Version: 0.0.1
+Author: Ramu chiluveru
+Author-email: ramuchiluveru.cr@gmail.com
+Requires-Dist: python-dotenv
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: pymongo
+Requires-Dist: certifi
