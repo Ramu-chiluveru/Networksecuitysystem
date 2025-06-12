@@ -6,5 +6,6 @@ Author-email: ramuchiluveru.cr@gmail.com
 Requires-Dist: python-dotenv
 Requires-Dist: pandas
 Requires-Dist: numpy
+Requires-Dist: pymongo[srv]==4.7
 Requires-Dist: pymongo
 Requires-Dist: certifi
