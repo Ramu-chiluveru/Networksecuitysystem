@@ -9,3 +9,4 @@ Requires-Dist: numpy
 Requires-Dist: pymongo[srv]==4.7
 Requires-Dist: pymongo
 Requires-Dist: certifi
+Requires-Dist: scikit-learn

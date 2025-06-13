@@ -1,2 +1,6 @@
-for folder in ["cloud","components","entity","exception","logging","pipeline","utils"]:
-  open(f"{folder}/__init__.py", "a").close()
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("../Network_Data/phisingData.csv")
+
+print("NA rows: ",df.isna().sum())
