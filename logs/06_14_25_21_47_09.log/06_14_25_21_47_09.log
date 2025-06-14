@@ -1,0 +1,23 @@
+[ 2025-06-14 21:47:15,507 ] 18 root - INFO - Initiate the data ingestion
+[ 2025-06-14 21:47:16,941 ] 96 pymongo.serverSelection - INFO - {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "find", "topologyDescription": "<TopologyDescription id: 684da08c477f62b6eca72790, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster0-shard-00-00.zcgcs.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('cluster0-shard-00-01.zcgcs.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('cluster0-shard-00-02.zcgcs.mongodb.net', 27017) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "684da08c477f62b6eca72790"}, "remainingTimeMS": 30}
+[ 2025-06-14 21:47:28,967 ] 65 root - INFO - Performed train test split on the dataframe
+[ 2025-06-14 21:47:28,967 ] 67 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[ 2025-06-14 21:47:28,968 ] 75 root - INFO - Exporting train and test file path.
+[ 2025-06-14 21:47:29,353 ] 84 root - INFO - Exported train and test file path.
+[ 2025-06-14 21:47:29,355 ] 20 root - INFO - Data Initiation Completed
+[ 2025-06-14 21:47:29,393 ] 24 root - INFO - Initiate the data Validation
+[ 2025-06-14 21:47:29,669 ] 32 root - INFO - Required number of columns:2
+[ 2025-06-14 21:47:29,670 ] 33 root - INFO - Data frame has columns:31
+[ 2025-06-14 21:47:29,670 ] 32 root - INFO - Required number of columns:2
+[ 2025-06-14 21:47:29,670 ] 33 root - INFO - Data frame has columns:31
+[ 2025-06-14 21:47:30,573 ] 26 root - INFO - data Validation Completed
+[ 2025-06-14 21:47:30,574 ] 29 root - INFO - data Transformation started
+[ 2025-06-14 21:47:30,574 ] 63 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2025-06-14 21:47:30,574 ] 65 root - INFO - Starting data transformation
+[ 2025-06-14 21:47:30,781 ] 48 root - INFO - Entered get_data_trnasformer_object method of Trnasformation class
+[ 2025-06-14 21:47:30,782 ] 53 root - INFO - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-06-14 21:47:30,853 ] 49 root - INFO - Entered the save object method of mainutils class
+[ 2025-06-14 21:47:30,873 ] 55 root - INFO - Exited the save_object method of the mainutils class
+[ 2025-06-14 21:47:30,873 ] 49 root - INFO - Entered the save object method of mainutils class
+[ 2025-06-14 21:47:30,887 ] 55 root - INFO - Exited the save_object method of the mainutils class
+[ 2025-06-14 21:47:30,895 ] 33 root - INFO - data Transformation completed
