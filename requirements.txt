@@ -10,6 +10,6 @@ dagshub
 fastapi
 uvicorn
 python-multipart
+joblib
 
-
-##-e .
+# -e .
