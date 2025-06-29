@@ -42,6 +42,7 @@ streamlit run streamlit_app.py
 ```
 
 # folder structure
+```
 phishscan/
 ├── final_models/          # Trained models and preprocessor (model.pkl, preprocessor.pkl)
 ├── networkSecurity/components/         # ML pipeline steps (data_ingestion,data_validation,data_transformation, model_trainer)
@@ -55,3 +56,4 @@ phishscan/
 ├── main.py             # Script for training and saving models
 ├── app.py              # FastAPI app for batch predictions
 └── requirements.txt    # Python dependencies
+```
