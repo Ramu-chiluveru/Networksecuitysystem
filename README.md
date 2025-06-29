@@ -36,13 +36,12 @@ git clone https://github.com/Ramu-chiluveru/PhishScan.git
 cd phishscan
 pip install -r requirements.txt
 
-
-## Run the app
 streamlit run streamlit_app.py
 
 
 ```
 
+# folder structure
 phishscan/
 ├── final_models/          # Trained models and preprocessor (model.pkl, preprocessor.pkl)
 ├── networkSecurity/components/         # ML pipeline steps (data_ingestion,data_validation,data_transformation, model_trainer)
