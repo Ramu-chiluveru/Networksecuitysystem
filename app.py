@@ -19,9 +19,9 @@ from starlette.responses import RedirectResponse
 import pandas as pd
 
 from networksecurity.utils.main_utils.utils import load_object
-
 from networksecurity.utils.ml_utils.model.estimator import NetworkModel
 
+from parseFeatures import ParseFeatures 
 
 load_dotenv()
 mongo_db_url = os.getenv("MONGODB_URL")
@@ -61,6 +61,40 @@ async def train_route():
         return Response("Training is successful")
     except Exception as e: 
         raise NetworkSecurityException(e,sys)
+    
+@app.post("/url")
+async def url_route(request: Request, url: str):
+    print(f"Request received for {url} url")
+
+    features = ParseFeatures(url).extract_all()
+    print(f"Features extracted: {features}")
+
+    # Convert to DataFrame and save as CSV for prediction
+    column_names = [
+        "having_IP_Address", "URL_Length", "Shortining_Service", "having_At_Symbol", 
+        "double_slash_redirecting", "Prefix_Suffix", "having_Sub_Domain", "SSLfinal_State",
+        "Domain_registeration_length", "Favicon", "port", "HTTPS_token", "Request_URL", 
+        "URL_of_Anchor", "Links_in_tags", "SFH", "Submitting_to_email", "Abnormal_URL", 
+        "Redirect", "on_mouseover", "RightClick", "popUpWidnow", "Iframe", 
+        "age_of_domain", "DNSRecord", "web_traffic", "Page_Rank", "Google_Index", 
+        "Links_pointing_to_page", "Statistical_report"
+    ]
+
+    df = pd.DataFrame([features], columns=column_names)
+
+    csv_path = "features.csv"
+    df.to_csv(csv_path, index=False)
+
+    # Open the file and create a fake UploadFile-like object
+    class DummyFile:
+        def __init__(self, file):
+            self.file = file
+
+    with open(csv_path, "rb") as f:
+        dummy_upload = DummyFile(f)
+        return await predict_route(request, dummy_upload)
+
+
     
 @app.post("/predict")
 async def predict_route(request: Request, file: UploadFile = File(...)):

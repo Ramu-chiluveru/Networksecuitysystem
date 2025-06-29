@@ -11,5 +11,7 @@ fastapi
 uvicorn
 python-multipart
 joblib
+python-whois
+streamlit
 
 # -e .
