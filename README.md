@@ -41,7 +41,7 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 
 
-bash```
+```
 
 phishscan/
 ├── final_models/          # Trained models and preprocessor (model.pkl, preprocessor.pkl)
